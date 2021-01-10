@@ -13,15 +13,15 @@ public class Tic {
     public String [][] getBoard(){
         return board;
     }
-    public void setBoard(String [][] a){
-        this.board=a;
+    public void setBoard(String [][] board){
+        this.board=board;
     }
-    public void setPlayerName(String name1, String name2){
-        this.player1=name1;
-        this.player2=name2;
+    public void setPlayerName(String player1, String player2){
+        this.player1=player1;
+        this.player2=player2;
     }
     public boolean winnerPlayerOne(){
-        String [][] a=getBoard().clone();
+        String [][] a=getBoard();
         boolean g=false;
         if ((a[0][0]=="x")&& (a[0][1]=="x") && (a[0][2]=="x")){
             g=true;
@@ -56,7 +56,7 @@ public class Tic {
         return g;
     }
     public boolean winnerPlayerTwo(){
-        String [][] a=getBoard().clone();
+        String [][] a=getBoard();
         boolean g=false;
         if ((a[0][0]=="o")&& (a[0][1]=="o") && (a[0][2]=="o")){
             g=true;
@@ -91,7 +91,7 @@ public class Tic {
         return g;
     }
     public void moveSetPlayerOne(int a){
-        String [][] boardOne=getBoard().clone();
+        String [][] boardOne=getBoard();
         if (a==1)
             boardOne[0][0]="x";
             if (a==2)
@@ -114,7 +114,7 @@ public class Tic {
     }
 
     public void moveSetPlayerTwo(int a){
-        String [][] boardOne=getBoard().clone();
+        String [][] boardOne=getBoard();
         if (a==1)
             boardOne[0][0]="o";
             if (a==2)
